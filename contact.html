@@ -213,6 +213,7 @@
 								action="https://formspree.io/f/xwkgzpnw"
 								method="POST"
 								role="form"
+								id="form"
 							
 							>
 								<div class="row">
@@ -317,7 +318,7 @@
 									<div class="loading">Loading</div>
 									<div class="error-message"></div>
 									<div class="sent-message">
-										Thank you for your message! We will get back to you soon.
+										Thank you, your message has been sent. We will get back to you soon.
 									</div>
 								</div>
 								<div class="text-start">
@@ -472,6 +473,7 @@ document.getElementById("contact").addEventListener("submit", function(event) {
 
         // Show the message container
         document.getElementById("messageContainer").style.display = "block";
+		document.getElementById("form").style.display = "none";
 
        document.getElementById("contact").reset();
     });
