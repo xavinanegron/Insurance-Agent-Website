@@ -206,7 +206,8 @@
 							</div>
 						</div>
 <div class="form col-xl-7 d-flex justify-content-center" data-aos="fade-left">
-    <form action="https://formspree.io/f/mbjnblaw" method="POST" role="form" class="php-email-form">
+    <form action="https://formspree.io/f/mbjnblaw"
+  method="POST" role="form">
         <div class="row">
 			<p class="text-start mb-2">Name <span style="color: #999">(required)</span></p>
             <div class="col-md-6 form-group">
@@ -372,18 +373,21 @@
 
 		<!-- Navbar disappear -->
 		<script>
-  let lastScrollTop = 0;
-  window.addEventListener("scroll", function() {
+ let lastScrollTop = 0;
+window.addEventListener("scroll", function() {
     let currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+    let header = document.getElementById("header");
+
     if (currentScroll > lastScrollTop) {
-      // Downscroll code
-      document.getElementById("header").style.top = "-120px"; // Adjust this value based on your header height
+        // Downscroll code
+        header.style.top = "-120px"; // Adjust this value based on your header height
     } else {
-      // Upscroll code
-      document.getElementById("header").style.top = "0";
+        // Upscroll code
+        header.style.top = "0";
     }
+
     lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
-  }, false);
+}, false);
 
  document.addEventListener('DOMContentLoaded', function() {
     var agencyQuestion = document.getElementById('working_with_agency');

@@ -544,18 +544,22 @@
 
   <!-- Navbar disappear -->
 		<script>
-  let lastScrollTop = 0;
-  window.addEventListener("scroll", function() {
+let lastScrollTop = 0;
+window.addEventListener("scroll", function() {
     let currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+    let header = document.getElementById("header");
+
     if (currentScroll > lastScrollTop) {
-      // Downscroll code
-      document.getElementById("header").style.top = "-120px"; // Adjust this value based on your header height
+        // Downscroll code
+        header.style.top = "-120px"; // Adjust this value based on your header height
     } else {
-      // Upscroll code
-      document.getElementById("header").style.top = "0";
+        // Upscroll code
+        header.style.top = "0";
     }
+
     lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
-  }, false);
+}, false);
+
 </script>
 
 </body>

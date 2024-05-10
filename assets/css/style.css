@@ -125,7 +125,7 @@ h6 {
 --------------------------------------------------------------*/
 #header {
 	height: 100px;
-	transition: all 0.5s;
+	transition: top 2s ease-in-out;
 	z-index: 997;
 	background: #0a4f51;
 }
