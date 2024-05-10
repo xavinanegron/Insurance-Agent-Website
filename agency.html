@@ -252,7 +252,13 @@
             <button type="submit" class="contact-btn">Send Message</button>
         </div>
     </form>
-    <!-- Add your image here -->
+    <div class="my-3" id="messageContainer" style="display: none;">
+									<div class="loading">Loading</div>
+									<div class="error-message"></div>
+									<div class="sent-message">
+										Thank you, your message has been sent. We will get back to you soon.
+									</div>
+								</div>
 </div>
 
 					</div>
@@ -401,6 +407,17 @@ window.addEventListener("scroll", function() {
         }
     });
 });
+// form submission message 
+document.getElementById("contact").addEventListener("submit", function(event) {
+        // Prevent the form from submitting normally
+        event.preventDefault();
+
+        // Show the message container
+        document.getElementById("messageContainer").style.display = "block";
+		document.getElementById("form").style.display = "none";
+
+       document.getElementById("contact").reset();
+    });
 
 </script>
 	</body>
