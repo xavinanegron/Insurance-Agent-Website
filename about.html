@@ -176,7 +176,6 @@
 							<div class="content d-flex flex-column justify-content-center pt-4">
 								 <h3 data-aos="fade-up"><strong>Meet Denise De Santiago</strong></h3>
 								<h4 data-aos="fade-up">Specializing in Medicare Insurance</h4>
-                <br>
 								<p data-aos="fade-up">
     <span style="font-weight: bold; color: #cbb26a;">Denise De Santiago</span> brings two decades of expertise in the Life and Health Insurance sector to her role. In 2014, as a mother of two, she, like many, sought a brighter future for her family. This journey led her to Orlando, FL, where she currently excels as an instructor and facilitator in the realm of Life and Health insurance for numerous insurance firms. Her primary focus lies in training countless Insurance Agents to assist the 65 and older community, particularly in matters of Medicare, alongside other insurance lines.
 </p>
@@ -217,9 +216,9 @@
 			<section id="clients" class="choose">
     <div class="container">
 
-        <div class="row why-choose p-5" data-aos="fade-up">
+        <div class="row why-choose px-5 py-3" data-aos="fade-up">
             <h2 class="text-center pb-5"><strong>Why Choose De Santiago Consultant</strong></h2>
-            <div class="col-lg-3 col-md-4 col-xs-6">
+            <div class="col-lg-3 col-md-4 col-xs-6" data-aos="fade-right">
                 <div class="client-logo">
                     <div class="client-info">
 						<i class="bi bi-award-fill icon-large d-flex justify-content-center"></i>
@@ -230,7 +229,7 @@
                 </div>
             </div>
 
-            <div class="col-lg-3 col-md-4 col-xs-6 pt-4">
+            <div class="col-lg-3 col-md-4 col-xs-6 pt-4" data-aos="fade-right">
                 <div class="client-logo">
                     <div class="client-info">
 						<i class="bi bi-person-bounding-box icon-large d-flex justify-content-center"></i>
@@ -240,7 +239,7 @@
                 </div>
             </div>
 
-            <div class="col-lg-3 col-md-4 col-xs-6 pt-4">
+            <div class="col-lg-3 col-md-4 col-xs-6 pt-4" data-aos="fade-right">
                 <div class="client-logo">
 					<i class="bi bi-people-fill icon-large d-flex justify-content-center"></i>
                     <div class="client-info">
@@ -254,7 +253,7 @@
                 </div>
             </div>
 
-            <div class="col-lg-3 col-md-4 col-xs-6 pt-4">
+            <div class="col-lg-3 col-md-4 col-xs-6 pt-4" data-aos="fade-right">
                 <div class="client-logo">
                     <div class="client-info">
 						<i class="bi bi-chat-heart-fill icon-large d-flex justify-content-center"></i>
@@ -266,7 +265,7 @@
         </div>
 		<div class="section-title p-5" data-aos="fade-up">
             <h3><strong><em>"A goal without a plan is just a wish."</em></strong></h3>
-            <p class="pb-5"><strong>- Antoine de Saint-Exupery</strong></p>
+            <p><strong>- Antoine de Saint-Exupery</strong></p>
         </div>
     </div>
 </section>
@@ -332,55 +331,55 @@
 								role="form"
 								class="php-email-form"
 							>
-								<div class="row">
-									<p class="text-start">Name <span style="color: #999">(required)</span></p><br>
-									<div class="col-md-6 form-group">
-										<p class="text-start">First Name</p>
+								<div class="row mb-3">
+									<!-- <p class="text-start">Name <span style="color: #999">(required)</span></p><br> -->
+									<div class="col-md-6 form-group mb-3">
+										<!-- <p class="text-start">First Name</p> -->
 										<input
 											type="text"
 											name="name"
 											class="form-control"
 											id="name"
-											placeholder=""
+											placeholder="First Name"
 											required
 										/>
 									</div>
 									<div class="col-md-6 form-group">
-										<p class="text-start">Last Name</p>
+										<!-- <p class="text-start">Last Name</p> -->
 										<input
 											type="text"
 											class="form-control"
 											name="name"
 											id="name"
-											placeholder=""
+											placeholder="Last Name"
 											required
 										/>
 									</div>
 									<div class="form-group mt-3">
-										<p class="text-start">Email <span style="color: #999">(required)</span></p>
+										<!-- <p class="text-start">Email <span style="color: #999">(required)</span></p> -->
 										<input
 											type="email"
 											class="form-control"
 											name="email"
 											id="email"
-											placeholder=""
+											placeholder="Email Address"
 											required
 										/>
 									</div>
 									<div class="form-group mt-3">
-										<p class="text-start">Phone <span style="color: #999">(required)</span></p>
+										<!-- <p class="text-start">Phone <span style="color: #999">(required)</span></p> -->
 										<input
 											type="tel"
 											class="form-control"
 											name="phone"
 											id="phone"
-											placeholder=""
+											placeholder="Phone Number"
 											required
 										/>
 									</div>
 								</div>
 								<div class="form-group mt-3">
-									<p class="text-start">Subject <span style="color: #999">(required)</span></p>
+									<p class="text-start">What can we help you with?<span style="color: #999"></span></p>
 									<select
 										class="form-control"
 										name="subject"
@@ -409,15 +408,15 @@
 								</div>
 
 								<div class="form-group mt-3">
-									<p class="text-start">
+									<!-- <p class="text-start">
 										How can we help you?
 										<span style="color: #999">(required)</span>
-									</p>
+									</p> -->
 									<textarea
 										class="form-control"
 										name="message"
 										rows="5"
-										placeholder=""
+										placeholder="Your Message"
 										required
 									></textarea>
 								</div>
@@ -551,22 +550,39 @@
 		<!-- Template Main JS File -->
 		<script src="assets/js/main.js"></script>
 		
-<!-- Navbar disappear -->
 		<script>
+// Navbar disappear
 let lastScrollTop = 0;
+let header = document.getElementById("header");
+let headerHeight = header.clientHeight; // Get header height
+let scrollThreshold = 200; // Adjust this value based on your preference
+
+function toggleHeader() {
+  let currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+
+  if (currentScroll > lastScrollTop && currentScroll > scrollThreshold) {
+    // Downscroll code and scrolled past threshold
+    header.style.top = "-120px"; // Adjust this value based on your header height
+  } else {
+    // Upscroll code or not scrolled past threshold
+    header.style.top = "0";
+  }
+
+  lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
+}
+
+let timeout;
+
 window.addEventListener("scroll", function() {
-    let currentScroll = window.pageYOffset || document.documentElement.scrollTop;
-    let header = document.getElementById("header");
-
-    if (currentScroll > lastScrollTop) {
-        // Downscroll code
-        header.style.top = "-120px"; // Adjust this value based on your header height
-    } else {
-        // Upscroll code
-        header.style.top = "0";
-    }
-
-    lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
+  clearTimeout(timeout);
+  header.style.transition = 'top 0.3s'; // Ensure smooth transition
+  toggleHeader();
+  
+  // Delay hiding header after scrolling stops
+  timeout = setTimeout(function() {
+    header.style.transition = 'top 0.5s'; // Slow down transition
+    header.style.top = "-120px"; // Adjust this value based on your header height
+  }, 500); // Adjust this value for the delay
 }, false);
 
 </script>

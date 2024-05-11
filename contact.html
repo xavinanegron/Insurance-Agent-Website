@@ -325,8 +325,6 @@
 							</form>
 							
 							<div class="my-3" id="messageContainer" style="display: none;">
-									<div class="loading">Loading</div>
-									<div class="error-message"></div>
 									<div class="sent-message">
 										Thank you, your message has been sent. We will get back to you soon.
 									</div>
@@ -396,13 +394,7 @@
 						&copy; 2024 Copyright <strong><span>De Santiago Insurances Consultant</span></strong
 						>. All Rights Reserved
 					</div>
-					<div class="credits">
-						<!-- All the links in the footer should remain intact. -->
-						<!-- You can delete the links only if you purchased the pro version. -->
-						<!-- Licensing information: https://bootstrapmade.com/license/ -->
-						<!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/flattern-multipurpose-bootstrap-template/ -->
-						<!-- Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a> -->
-					</div>
+					
 				</div>
 				<div class="social-links text-center text-md-right">
 					
@@ -448,22 +440,40 @@
 		<!-- Template Main JS File -->
 		<script src="assets/js/main.js"></script>
 
-		<!-- Navbar disappear -->
+		
 		<script>
+// Navbar disappear
 let lastScrollTop = 0;
+let header = document.getElementById("header");
+let headerHeight = header.clientHeight; // Get header height
+let scrollThreshold = 200; // Adjust this value based on your preference
+
+function toggleHeader() {
+  let currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+
+  if (currentScroll > lastScrollTop && currentScroll > scrollThreshold) {
+    // Downscroll code and scrolled past threshold
+    header.style.top = "-120px"; // Adjust this value based on your header height
+  } else {
+    // Upscroll code or not scrolled past threshold
+    header.style.top = "0";
+  }
+
+  lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
+}
+
+let timeout;
+
 window.addEventListener("scroll", function() {
-    let currentScroll = window.pageYOffset || document.documentElement.scrollTop;
-    let header = document.getElementById("header");
-
-    if (currentScroll > lastScrollTop) {
-        // Downscroll code
-        header.style.top = "-120px"; // Adjust this value based on your header height
-    } else {
-        // Upscroll code
-        header.style.top = "0";
-    }
-
-    lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
+  clearTimeout(timeout);
+  header.style.transition = 'top 0.3s'; // Ensure smooth transition
+  toggleHeader();
+  
+  // Delay hiding header after scrolling stops
+  timeout = setTimeout(function() {
+    header.style.transition = 'top 0.5s'; // Slow down transition
+    header.style.top = "-120px"; // Adjust this value based on your header height
+  }, 500); // Adjust this value for the delay
 }, false);
 
 // form submission message 
@@ -475,7 +485,7 @@ document.getElementById("contact").addEventListener("submit", function(event) {
         document.getElementById("messageContainer").style.display = "block";
 		document.getElementById("form").style.display = "none";
 
-       document.getElementById("contact").reset();
+       document.getElementById("form").reset();
     });
 </script>
 	</body>

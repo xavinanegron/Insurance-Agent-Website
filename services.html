@@ -157,22 +157,22 @@
 		<!-- End Header -->
 
   <main id="main">
-   <!-- ======= Services Section ======= -->
+  <!-- ======= Services Section ======= -->
 			<section
 				id="services"
-				class="services"
+				class="services "
 			>
 				<div class="d-flex justify-content-between align-items-center"></div>
 				<div
 					class="container"
 					data-aos="fade-up"
 				>
-					<div class="row mt-5">
-						<h2 class="text-center p-4"><strong>Insurance Services</strong></h2>
+					<div class="row">
+						<h2 class="text-center pb-4"><strong>Insurance Services</strong></h2>
 						<div class="col-lg-4 col-md-6">
 							<div class="icon-box"
 							data-aos="fade-up"
-								data-aos-delay="100">
+								data-aos-delay="50">
 								<div class="icon"><i class="bi bi-people"></i></div>
 								<h4 class="title"><a href="services.html">Life</a></h4>
 								<p class="description">
@@ -188,7 +188,7 @@
 							<div
 								class="icon-box"
 								data-aos="fade-up"
-								data-aos-delay="100"
+								data-aos-delay="50"
 							>
 								<div class="icon"><i class="bi bi-lungs"></i></div>
 								<h4 class="title"><a href="services.html">Health</a></h4>
@@ -204,7 +204,7 @@
 							<div
 								class="icon-box"
 								data-aos="fade-up"
-								data-aos-delay="200"
+								data-aos-delay="50"
 							>
 								<div class="icon"><i class="bi bi-currency-dollar"></i></div>
 								<h4 class="title"><a href="services.html">Annuities</a></h4>
@@ -220,7 +220,7 @@
 							<div
 								class="icon-box"
 								data-aos="fade-up"
-								data-aos-delay="200"
+								data-aos-delay="50"
 							>
 								<div class="icon"><i class="bi bi-credit-card"></i></div>
 								<h4 class="title"><a href="services.html">Supplemental</a></h4>
@@ -236,7 +236,7 @@
 							<div
 								class="icon-box"
 								data-aos="fade-up"
-								data-aos-delay="300"
+								data-aos-delay="50"
 							>
 								<div class="icon"><i class="bi bi-shield-check"></i></div>
 								<h4 class="title"><a href="services.html">Medicare</a></h4>
@@ -252,7 +252,7 @@
 							<div
 								class="icon-box"
 								data-aos="fade-up"
-								data-aos-delay="400"
+								data-aos-delay="50"
 							>
 								<div class="icon"><i class="bi bi-file-check"></i></div>
 								<h4 class="title"><a href="services.html">Indemnity</a></h4>
@@ -542,24 +542,40 @@
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
 
-  <!-- Navbar disappear -->
 		<script>
+// Navbar disappear
 let lastScrollTop = 0;
+let header = document.getElementById("header");
+let headerHeight = header.clientHeight; // Get header height
+let scrollThreshold = 200; // Adjust this value based on your preference
+
+function toggleHeader() {
+  let currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+
+  if (currentScroll > lastScrollTop && currentScroll > scrollThreshold) {
+    // Downscroll code and scrolled past threshold
+    header.style.top = "-120px"; // Adjust this value based on your header height
+  } else {
+    // Upscroll code or not scrolled past threshold
+    header.style.top = "0";
+  }
+
+  lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
+}
+
+let timeout;
+
 window.addEventListener("scroll", function() {
-    let currentScroll = window.pageYOffset || document.documentElement.scrollTop;
-    let header = document.getElementById("header");
-
-    if (currentScroll > lastScrollTop) {
-        // Downscroll code
-        header.style.top = "-120px"; // Adjust this value based on your header height
-    } else {
-        // Upscroll code
-        header.style.top = "0";
-    }
-
-    lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
+  clearTimeout(timeout);
+  header.style.transition = 'top 0.3s'; // Ensure smooth transition
+  toggleHeader();
+  
+  // Delay hiding header after scrolling stops
+  timeout = setTimeout(function() {
+    header.style.transition = 'top 0.5s'; // Slow down transition
+    header.style.top = "-120px"; // Adjust this value based on your header height
+  }, 500); // Adjust this value for the delay
 }, false);
-
 </script>
 
 </body>

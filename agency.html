@@ -207,45 +207,45 @@
 						</div>
 <div class="form col-xl-7 d-flex justify-content-center" data-aos="fade-left">
     <form action="https://formspree.io/f/mbjnblaw"
-  method="POST" role="form">
+  method="POST">
         <div class="row">
 			<p class="text-start mb-2">Name <span style="color: #999">(required)</span></p>
-            <div class="col-md-6 form-group">
-                <p class="text-start">First Name</p>
-                <input type="text" name="firstname" class="form-control" id="firstname" placeholder="" required />
+            <div class="col-md-6 form-group mb-3">
+                <!-- <p class="text-start">First Name</p> -->
+                <input type="text" name="firstname" class="form-control" id="firstname" placeholder="First Name" required />
             </div>
             <div class="col-md-6 form-group">
-                <p class="text-start">Last Name</p>
-                <input type="text" class="form-control" name="lastname" id="lastname" placeholder="" required />
+                <!-- <p class="text-start">Last Name</p> -->
+                <input type="text" class="form-control" name="lastname" id="lastname" placeholder="Last Name" required />
             </div>
             <div class="form-group mt-3 col-md-6">
-                <p class="text-start">Email Address <span style="color: #999">(required)</span></p>
-                <input type="email" class="form-control" name="email" id="email" placeholder="" required />
+                <!-- <p class="text-start">Email Address <span style="color: #999">(required)</span></p> -->
+                <input type="email" class="form-control" name="email" id="email" placeholder="Email Address" required />
             </div>
             <div class="form-group mt-3 col-md-6">
-                <p class="text-start">Phone <span style="color: #999">(required)</span></p>
-                <input type="tel" class="form-control" name="phone" id="phone" placeholder="" required />
+                <!-- <p class="text-start">Phone <span style="color: #999">(required)</span></p> -->
+                <input type="tel" class="form-control" name="phone" id="phone" placeholder="Phone Number" required />
             </div>
             <div class="form-group mt-3">
-                <p class="text-start">Zip Code <span style="color: #999">(required)</span></p>
-                <input type="text" class="form-control" name="zipcode" id="zipcode" placeholder="" required inputmode="numeric" />
+                <!-- <p class="text-start">Zip Code <span style="color: #999">(required)</span></p> -->
+                <input type="text" class="form-control" name="zipcode" id="zipcode" placeholder="Zip Code" required inputmode="numeric" />
             </div>
 			<div class="form-group mt-3 col-md-6">
-                <p class="text-start">National Producer Number (NPN) <span style="color: #999">(required)</span></p>
-                <input type="text" class="form-control" name="NPN" id="NPN" placeholder="" required inputmode="numeric" />
+                <!-- <p class="text-start">National Producer Number (NPN) <span style="color: #999">(required)</span></p> -->
+                <input type="text" class="form-control" name="NPN" id="NPN" placeholder="National Producer Number (NPN)" required inputmode="numeric" />
             </div>
 			<div class="form-group mt-3 col-md-6">
-                <p class="text-start">Department of Insurance (DOI) <span style="color: #999">(optional)</span></p>
-                <input type="text" class="form-control" name="DOI" id="DOI" placeholder="" />
+                <!-- <p class="text-start">Department of Insurance (DOI) <span style="color: #999">(optional)</span></p> -->
+                <input type="text" class="form-control" name="DOI" id="DOI" placeholder="Department of Insurance (DOI)" />
             </div>
             <div class="form-group mt-3 col-md-6">
-                <p class="text-start">Current FMO <span style="color: #999">(optional)</span></p>
-                <input type="text" class="form-control" name="FMO" id="FMO" placeholder="" />
+                <!-- <p class="text-start">Current FMO <span style="color: #999">(optional)</span></p> -->
+                <input type="text" class="form-control" name="FMO" id="FMO" placeholder="Current FMO" />
             </div>
         </div>
         <div class="form-group mt-3">
-            <p class="text-start">How can we help you? <span style="color: #999">(required)</span></p>
-            <textarea class="form-control" name="message" rows="5" placeholder="" required></textarea>
+            <!-- <p class="text-start">How can we help you? <span style="color: #999">(required)</span></p> -->
+            <textarea class="form-control" name="message" rows="5" placeholder="Your Message" required></textarea>
         </div>
 
         <div class="text-start">
@@ -253,8 +253,6 @@
         </div>
     </form>
     <div class="my-3" id="messageContainer" style="display: none;">
-									<div class="loading">Loading</div>
-									<div class="error-message"></div>
 									<div class="sent-message">
 										Thank you, your message has been sent. We will get back to you soon.
 									</div>
@@ -377,22 +375,40 @@
 		<!-- Template Main JS File -->
 		<script src="assets/js/main.js"></script>
 
-		<!-- Navbar disappear -->
+		
 		<script>
- let lastScrollTop = 0;
+// Navbar disappear
+let lastScrollTop = 0;
+let header = document.getElementById("header");
+let headerHeight = header.clientHeight; // Get header height
+let scrollThreshold = 200; // Adjust this value based on your preference
+
+function toggleHeader() {
+  let currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+
+  if (currentScroll > lastScrollTop && currentScroll > scrollThreshold) {
+    // Downscroll code and scrolled past threshold
+    header.style.top = "-120px"; // Adjust this value based on your header height
+  } else {
+    // Upscroll code or not scrolled past threshold
+    header.style.top = "0";
+  }
+
+  lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
+}
+
+let timeout;
+
 window.addEventListener("scroll", function() {
-    let currentScroll = window.pageYOffset || document.documentElement.scrollTop;
-    let header = document.getElementById("header");
-
-    if (currentScroll > lastScrollTop) {
-        // Downscroll code
-        header.style.top = "-120px"; // Adjust this value based on your header height
-    } else {
-        // Upscroll code
-        header.style.top = "0";
-    }
-
-    lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
+  clearTimeout(timeout);
+  header.style.transition = 'top 0.3s'; // Ensure smooth transition
+  toggleHeader();
+  
+  // Delay hiding header after scrolling stops
+  timeout = setTimeout(function() {
+    header.style.transition = 'top 0.5s'; // Slow down transition
+    header.style.top = "-120px"; // Adjust this value based on your header height
+  }, 500); // Adjust this value for the delay
 }, false);
 
  document.addEventListener('DOMContentLoaded', function() {
@@ -416,7 +432,7 @@ document.getElementById("contact").addEventListener("submit", function(event) {
         document.getElementById("messageContainer").style.display = "block";
 		document.getElementById("form").style.display = "none";
 
-       document.getElementById("contact").reset();
+       document.getElementById("form").reset();
     });
 
 </script>
