@@ -151,7 +151,7 @@
 		<main id="main">
 			<!-- ======= Contact Section ======= -->
 			<section
-				id="contact"
+				id="contact-agency"
 				class="form-container"
 			>
 				<div class="container pt-5 pb-5">
@@ -220,11 +220,11 @@
             </div>
             <div class="form-group mt-3">
                 <!-- <p class="text-start">Zip Code <span style="color: #999">(required)</span></p> -->
-                <input type="text" class="form-control" name="zipcode" id="zipcode" placeholder="Zip Code" pattern="[0-9]* required" />
+                <input type="text" class="form-control" name="zipcode" id="zipcode" placeholder="Zip Code" />
             </div>
 			<div class="form-group mt-3 col-md-6">
                 <!-- <p class="text-start">National Producer Number (NPN) <span style="color: #999">(required)</span></p> -->
-                <input type="text" class="form-control" name="NPN" id="NPN" placeholder="National Producer Number (NPN)" required pattern="[0-9]* required" />
+                <input type="text" class="form-control" name="NPN" id="NPN" placeholder="National Producer Number (NPN)" required />
             </div>
 			<div class="form-group mt-3 col-md-6">
                 <!-- <p class="text-start">Department of Insurance (DOI) <span style="color: #999">(optional)</span></p> -->
@@ -411,7 +411,7 @@ window.addEventListener("scroll", function() {
     });
 });
 // form submission message 
-document.getElementById("contact").addEventListener("submit", function(event) {
+document.getElementById("contact-agency").addEventListener("submit", function(event) {
         // Prevent the form from submitting normally
         event.preventDefault();
 
