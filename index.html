@@ -161,69 +161,56 @@
 					role="listbox"
 				>
 					<!-- Slide 1 -->
-					<div
-						class="carousel-item active"
-						style="background-image: url(assets/img/slide/paperfamily.jpg)"
-					>
-						<div class="carousel-container">
-							<div class="carousel-content animate__animated animate__fadeInUp">
-								<h2><strong>Creating and <span>Protecting Assets</span></strong></h2>
-								<p class="">
-									Our consultancy offers comprehensive coverage tailored to your life, health, and financial security needs. Whether protecting loved ones, safeguarding health, or planning retirement with annuities, we've got you covered.
-								</p>
-								<div class="text-center">
-									<a
-										href="#about-us"
-										class="btn-get-started"
-										>Learn More</a
-									>
-								</div>
-							</div>
-						</div>
-					</div>
+					<div class="carousel-item active" data-bg="assets/img/slide/paperfamily.jpg">
+    <div class="carousel-container">
+        <div class="carousel-content animate__animated animate__fadeInUp">
+            <h2><strong>Creating and <span>Protecting Assets</span></strong></h2>
+            <p class="">
+                Our consultancy offers comprehensive coverage tailored to your life, health, and financial security needs. Whether protecting loved ones, safeguarding health, or planning retirement with annuities, we've got you covered.
+            </p>
+            <div class="text-center">
+                <a href="#about-us" class="btn-get-started">Learn More</a>
+            </div>
+        </div>
+    </div>
+</div>
+
 
 					<!-- Slide 2 -->
 					<!-- Photo by Natalya Zaritskaya on Unsplash -->
-					<div
-						class="carousel-item"
-						style="background-image: url(assets/img/slide/happyfam.jpg)"
-						
-					>
-						<div class="carousel-container">
-							<div class="carousel-content animate__animated animate__fadeInUp">
-								<h2><strong>Get a Quote and Secure Your Peace of Mind</strong></h2>
-								<p class="">
-									Ready to protect what matters most? Our streamlined quote process makes it easy to get personalized insurance options tailored to your needs and budget. Fill out our quick form, and let us do the rest. With our expertise, you can enjoy peace of mind knowing you're prepared.
-								</p>
-								<div class="text-center">
-									<a
-										href="contact.html"
-										class="btn-get-started"
-										>Start Now</a
-									>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
+					<div class="carousel-item" data-bg="assets/img/slide/happyfam.jpg">
+    <div class="carousel-container">
+        <div class="carousel-content animate__animated animate__fadeInUp">
+            <h2><strong>Get a Quote and Secure Your Peace of Mind</strong></h2>
+            <p class="">
+                Ready to protect what matters most? Our streamlined quote process makes it easy to get personalized insurance options tailored to your needs and budget. Fill out our quick form, and let us do the rest. With our expertise, you can enjoy peace of mind knowing you're prepared.
+            </p>
+            <div class="text-center">
+                <a href="contact.html" class="btn-get-started">Start Now</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+			
 				<!-- Slide 3 -->
-					<div class="carousel-item" style="background-image: url(assets/img/slide/agent1.jpg)">
-        <div class="carousel-container">
-            <div class="carousel-content animate__animated animate__fadeInUp">
-                <h2><strong>Career Opportunities</strong></h2>
-                <p class="">We offer more than insurance – we empower individuals to thrive in the industry. Explore opportunities to join our network as an agency or consultant, and embark on a rewarding journey. Let's secure your future together. No license? We can help you get it.
-</p></p>
-                <div class="button-container d-flex justify-content-center flex-column align-items-center">
-                    <div class="">
-                        <a href="consultant.html" class="btn btn-get-started">Become a Consultant</a>
-                    </div>
-                    <div class="mb-3">
-                        <a href="agency.html" class="btn btn-get-started">Become an Agency</a>
-                    </div>
+					<div class="carousel-item" data-bg="assets/img/slide/agent1.jpg">
+    <div class="carousel-container">
+        <div class="carousel-content animate__animated animate__fadeInUp">
+            <h2><strong>Career Opportunities</strong></h2>
+            <p class="">We offer more than insurance – we empower individuals to thrive in the industry. Explore opportunities to join our network as an agency or consultant, and embark on a rewarding journey. Let's secure your future together. No license? We can help you get it.
+            </p>
+            <div class="button-container d-flex justify-content-center flex-column align-items-center">
+                <div class="">
+                    <a href="consultant.html" class="btn btn-get-started">Become a Consultant</a>
+                </div>
+                <div class="mb-3">
+                    <a href="agency.html" class="btn btn-get-started">Become an Agency</a>
                 </div>
             </div>
         </div>
     </div>
+</div>
 
 				<a
 					class="carousel-control-prev"
@@ -696,6 +683,16 @@ window.addEventListener("scroll", function() {
     header.style.top = "-120px"; // Adjust this value based on your header height
   }, 500); // Adjust this value for the delay
 }, false);
+// Lazy loading
+src="path/to/lazyload.min.js";
+document.addEventListener("DOMContentLoaded", function() {
+    const lazyBackgrounds = document.querySelectorAll("[data-bg]");
+
+    lazyBackgrounds.forEach((item) => {
+        const imageSrc = item.getAttribute("data-bg");
+        item.style.backgroundImage = `url(${imageSrc})`;
+    });
+});
 </script>
 	</body>
 </html>

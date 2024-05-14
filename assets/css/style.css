@@ -494,7 +494,7 @@ h6 {
 }
 
 #hero .carousel-content {
-    background: rgba(250, 249, 248, 0.9); /* Adjust the last value (alpha) for transparency */
+    background: rgba(250, 249, 248, 0.9);
     padding: 40px;
     color: #fff;
     animation-duration: 1s;
