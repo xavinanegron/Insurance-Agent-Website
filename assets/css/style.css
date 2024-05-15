@@ -128,7 +128,6 @@ h6 {
 	transition: top 0.3s ease-in-out;
 	z-index: 1000;
 	background: #0a4f51;
-	
 }
 
 #header.fixed-top {
@@ -160,6 +159,18 @@ h6 {
 .scrolled-offset {
 	margin-top: 70px;
 }
+
+@media (max-width: 667px) {
+	#header {
+		height: 60px;
+	}
+	#header .logo img {
+	padding: 0;
+	margin: 1.5rem 0;
+	max-height: 40px;
+}
+}
+
 
 /*--------------------------------------------------------------
 # Navigation Menu
@@ -258,8 +269,6 @@ h6 {
 	text-transform: none;
 	font-weight: 500;
 	color: #0a4f51;
-	
-		
 }
 
 .navbar .dropdown ul a i {
