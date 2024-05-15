@@ -617,7 +617,7 @@ h6 {
 	justify-content: center;
 	position: absolute;
 	bottom: 50px;
-	top: 150px;
+	top: 100px;
 	left: 20px;
 	right: 20px;
 }
@@ -872,8 +872,8 @@ section {
 		line-height: 25px;
 	}
 
-	.services .container-services {
-		padding: 0rem 4rem;
+	#services .container {
+		padding: 0rem 1.5rem;
 	}
 }
 #features {
@@ -966,6 +966,10 @@ section {
 
 	.choose .client-info .choose-info p {
 		font-size: 15px;
+	}
+
+	#clients .section-title {
+		padding: 0rem 1.5rem;
 	}
 	
 
@@ -1336,11 +1340,6 @@ section {
 	line-height: 30px;
 }
 
-.form-container {
-	
-}
-
-
 .contact-social a {
 	font-size: 18px;
 	display: inline-block;
@@ -1459,6 +1458,10 @@ button:hover {
 	.form-container {
 		margin: 0;
 		padding-top: 0;
+	}
+
+	#contact, #contact-consultant, #contact-agency {
+		padding: 0rem 1rem;
 	}
 }
 @media (max-width: 667px) {
