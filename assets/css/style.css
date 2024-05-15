@@ -616,7 +616,7 @@ h6 {
 	align-items: flex-end;
 	justify-content: center;
 	position: absolute;
-	bottom: 50px;
+	bottom: 100px;
 	top: 100px;
 	left: 20px;
 	right: 20px;
@@ -791,7 +791,7 @@ section {
     overflow: hidden;
     position: relative;
     padding: 3rem 0;
-    background: linear-gradient(to top, rgba(255,255,255,0), rgba(255, 255, 255, 0.934)), url(../img/slide/peace.jpg);
+    background: linear-gradient(to top, rgba(255,255,255,0), rgba(255, 255, 255, 0.934)), url(../img/slide/familyhands.jpg);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center bottom; 
@@ -1397,10 +1397,6 @@ section {
 	font-size: 14px;
 }
 
-.form-control {
-	
-}
-
 .contact .php-email-form input {
 	height: 30px;
 }
@@ -1479,15 +1475,6 @@ button:hover {
 	color: #fafafa;
 	font-size: 14px;
 	background: #cbb26a;
-
-	/* background: 
-      linear-gradient(135deg,#0000 20.5%,#075659 0 29.5%,#0000 0) 0 6px,
-      linear-gradient( 45deg,#0000 8%,#075659 0 17%, #0000 0 58%) 12px 0,
-      linear-gradient(135deg,#0000 8%,#075659 0 17%, #0000 0 58%,#075659 0 67%,#0000 0),        
-      linear-gradient( 45deg,#0000 8%,#075659 0 17%, #0000 0 58%,#075659 0 67%,#0000 0 83%,#075659 0 92%,#0000 0),
-      #0a4f51;
-background-size: 24px 24px; */
-
 }
 
 #footer .footer-top {
