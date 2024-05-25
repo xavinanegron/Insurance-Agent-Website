@@ -791,7 +791,7 @@ section {
     overflow: hidden;
     position: relative;
     padding: 3rem 0;
-    background: linear-gradient(to top, rgba(255,255,255,0), rgba(255, 255, 255, 0.934)), url(../img/slide/familyhands.jpg);
+    background: linear-gradient(to top, rgba(255,255,255,0), rgba(255, 255, 255, 0.934)), url(../img/slide/familyhandssmall.jpg);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center bottom; 
