@@ -1,11 +1,3 @@
-/**
-* Template Name: Flattern
-* Template URL: https://bootstrapmade.com/flattern-multipurpose-bootstrap-template/
-* Updated: Mar 17 2024 with Bootstrap v5.3.3
-* Author: BootstrapMade.com
-* License: https://bootstrapmade.com/license/
-*/
-
 /*--------------------------------------------------------------
 # General
 --------------------------------------------------------------*/
@@ -786,7 +778,6 @@ section {
 # Services
 --------------------------------------------------------------*/
 #services {
-	/* background-color: #d5c28f; */
 	
     overflow: hidden;
     position: relative;
@@ -885,7 +876,7 @@ section {
     background: linear-gradient(to top, rgba(255,255,255,0), rgba(255, 255, 255, 0.934)), url(../img/slide/family6.jpg);
     background-size: cover;
     background-repeat: no-repeat;
-    background-position: center bottom; /* Center the background image vertically and horizontally */
+    background-position: center bottom; 
 }
 
 .features h2 {
